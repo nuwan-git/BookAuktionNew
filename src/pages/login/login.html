@@ -6,15 +6,19 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title><ion-icon name="log-in"></ion-icon>Login</ion-title>
+  <ion-navbar class="logBack" color="secondary">
+    <ion-toolbar >
+    <ion-title>
+      <ion-icon name="log-in"></ion-icon>Login
+    </ion-title>
+    </ion-toolbar>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
+<ion-content padding claas="logBack">
+    <ion-list >
         <ion-item>
             <ion-label floating>Email</ion-label>
             <ion-input type="text" value="" [(ngModel)]="emailField" placeholder="Email"></ion-input>
@@ -26,9 +30,20 @@
         </ion-item>
     </ion-list>
     
+    <ion-buttons class="joinButton" >
     <button ion-button (click)="submitLogin()">Login</button>
-   <button ion-button (click)="signUserUp()">Register</button>
-
+   <button ion-button (click)="signUserUp()">SignUp</button>
+    </ion-buttons>
+   <div class="joinButton">
+   <div class="fpbutton">
+     <button ion-button block (click)="googlesSignIn()"><ion-icon name="logo-googleplus"></ion-icon>Sign In With Google</button>
+   </div>
+    <button ion-button icon-left clear small (click)="showForgotPassword()">
+      <ion-icon ></ion-icon>
+      Forgot Password
+    </button>
+      <!--<button clear full >Forgot Password</button>-->
+   </div>
    <ion-list>
         <p> Lates Users</p>
         <ion-item *ngFor="let user of usersList">
